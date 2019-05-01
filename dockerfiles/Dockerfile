@@ -5,8 +5,16 @@ FROM tensorflow/tensorflow:1.12.0-gpu-py3
 RUN apt-get update && apt-get install -y \
     git \
     libhdf5-dev \
+    locales \
     pkg-config \
     wget
+
+# fix python encode/decode error in Ubuntu
+# from https://stackoverflow.com/questions/27931668/encoding-problems-when-running-an-app-in-docker-python-java-ruby-with-u/27931669
+RUN locale-gen en_US.UTF-8
+ENV LANG en_US.UTF-8
+ENV LANGUAGE en_US:en
+ENV LC_ALL en_US.UTF-8
 
 WORKDIR /tmp
 
