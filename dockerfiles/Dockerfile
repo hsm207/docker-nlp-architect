@@ -27,7 +27,7 @@ RUN wget --quiet https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86
     echo ". /opt/conda/etc/profile.d/conda.sh" >> ~/.bashrc && \
     echo "conda activate base" >> ~/.bashrc
 
-RUN /opt/conda/bin/conda create -y -n nlp-architect setuptools wheel python=3.6
+RUN /opt/conda/bin/conda create -y -n nlp-architect setuptools wheel jupyter python=3.6
 
 WORKDIR /opt
 
