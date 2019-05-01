@@ -14,7 +14,7 @@ This script requires Python 3.6 or above.
     ```
     python create_nlp_architect_dockerfile.py --backend=gpu
     ```
-    to create an NLP Architect Dockerfile with a gpu backend (replace gpu with cpu if you
+    to create an NLP Architect Dockerfile with a gpu backend (replace `gpu` with `cpu` if you
     want a cpu backend). Note the location of the Dockerfile.
     
 ## Run the image
