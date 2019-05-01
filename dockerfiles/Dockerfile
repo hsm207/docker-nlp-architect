@@ -39,3 +39,9 @@ RUN export NLP_ARCHITECT_BE=GPU && \
     # see: https://github.com/NVIDIA/nvidia-docker/wiki/Frequently-Asked-Questions#can-i-use-the-gpu-during-a-container-build-ie-docker-build
     sed -i 's/tensorflow==/tensorflow-gpu==/' requirements.txt && \
     /opt/conda/envs/nlp-architect/bin/pip install -e .
+
+# expose port for jupyter
+EXPOSE 8888
+# expose port for bokeh server
+EXPOSE 5006
+CMD /opt/conda/envs/nlp-architect/bin/jupyter notebook --notebook-dir=/opt/nlp-architect --ip 0.0.0.0 --no-browser --allow-root
